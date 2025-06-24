@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: dim_carmake
+    description: "Dimension de marcas de vehiculos. Contiene una clave unica para cada marca"
+    columns:
+      - name: id_carmake
+        description: "Clave subrograda unica para cada marca de vehiculo."
+        tests:
+          - unique
+          - not_null
+      - name: carmake
+        description: "Nombre de la marca del vehiculo."
+        tests:
+          - not_null
+
+  - name: dim_saleperson
+    description: "Dimension de vendedores. Contiene una clave unica para cada vendedor"
+    columns:
+      - name: id_salesperson
+        description: "Clave subrograda unica para cada vendedor."
+        tests:
+          - unique
+          - not_null
+      - name: carmake
+        description: "Nombre de la marca del vendedor."
+        tests:
+          - not_null
+
+  - name: fct_montly_sales
+    description: "Tabla de echos que consolida las ventas mensuales agregadas por vendedor y marca de vahiculo"
+    columns:
+      - name: ddate
+        description: "Mes de la venta(primer dia del mes)"
+        tests:
+          - not_null
+      - name: ID_SALESPERSON
+        description: "Clave foranea a la dimension de vendedores(dim_saleperson)"
+        tests:
+          - not_null
+          - relationships:
+              field: ID_SALESPERSON
+              to: ref('dim_saleperson')
+
+      - name: ID_CARMAKE
+        description: "Clave foranea a la dimension de venta por vehiculo(dim_carmake)"
+        tests:
+          - not_null
+          - relationships:
+              field: ID_CARMAKE
+              to: ref('dim_carmake')              

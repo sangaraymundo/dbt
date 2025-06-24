@@ -1,0 +1,6 @@
+models:
+  - name: psg_montly_sale_make
+    description: "Modelo intermedio que agrupa las ventas de manera mensual por marca del vehiculo"
+    columns:
+      - name: DDATE
+        description: "Solo se encuetras fechas de inicio de mes"

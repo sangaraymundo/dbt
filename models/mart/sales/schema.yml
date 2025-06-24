@@ -22,7 +22,7 @@ models:
         tests:
           - unique
           - not_null
-      - name: carmake
+      - name: salesperson
         description: "Nombre de la marca del vendedor."
         tests:
           - not_null

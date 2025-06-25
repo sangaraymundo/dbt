@@ -13,6 +13,11 @@ models:
         description: "Nombre de la marca del vehiculo."
         tests:
           - not_null
+          - accepted_values:
+              values: ['Toyota','Honda','Ford','Chevrolet','BMW', 'Mercedes-Benz','Audi','Wolkswagen']
+              config:
+                severity: error
+
 
   - name: dim_saleperson
     description: "Dimension de vendedores. Contiene una clave unica para cada vendedor"

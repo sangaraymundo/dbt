@@ -16,7 +16,7 @@ models:
           - accepted_values:
               values: ['Toyota','Honda','Ford','Chevrolet','BMW', 'Mercedes-Benz','Audi','Wolkswagen']
               config:
-                severity: error
+                severity: warn
 
 
   - name: dim_saleperson

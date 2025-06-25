@@ -1,7 +1,7 @@
 version: 2
 sources:
   - name: raw_bi_car
-    database: DATABUSTER_SAMPLE
+    database: DATABUOOSTERS
     schema: PUBLIC
     tables:
       - name: CAR_SALES_DATA
@@ -27,3 +27,5 @@ sources:
             description: "% de comision del vendedor"
           - name: COMMISSIONEARNED
             description: "Valor $  de la comisoin del vendedor"
+      - name: salesperson
+        description: "Tabla de vendedores"
